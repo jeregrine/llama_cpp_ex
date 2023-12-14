@@ -1,4 +1,20 @@
-defmodule LlamaCpp.PredictOptions do
+defmodule LLamaCpp.ModelOptions do
+  defstruct context_size: 512,
+            seed: 0,
+            f16_memory: true,
+            m_lock: false,
+            embeddings: false,
+            low_vram: false,
+            vocab_only: false,
+            m_map: true,
+            n_batch: 0,
+            numa: false,
+            n_gpu_layers: 0,
+            main_gpu: "",
+            tensor_split: ""
+end
+
+defmodule LLamaCpp.PredictOptions do
   defstruct seed: -1,
             threads: 8,
             tokens: 128,
@@ -22,7 +38,6 @@ defmodule LlamaCpp.PredictOptions do
             mirostat_tau: 5.0,
             penalize_nl: false,
             logit_bias: "",
-            token_callback: None,
             path_prompt_cache: "",
             m_lock: false,
             m_map: false,

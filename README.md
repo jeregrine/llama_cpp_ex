@@ -20,4 +20,6 @@ end
 ```elixir
  {:ok, llama} = LLamaCpp.new("./models/mistral-7b-instruct-v0.1.Q5_K_M.gguf")
  LLamaCpp.predict(llama, "hello my name is")
+ LLamaCpp.embeddings(llama, "hello my name is")
+ LLamaCpp.free_model(llama)
 ```
